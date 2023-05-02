@@ -4,7 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import { BsArrowLeftShort } from "react-icons/bs";
 import { BsArrowRightShort } from "react-icons/bs";
 import { FaPlay, FaPause, FaBackward, FaForward } from "react-icons/fa";
-import Music from ".//Song.mp3";
+import Song1 from "./Song.mp3";
+import Song2 from "./Song2.mp3";
 
 const AudioPlayer = () => {
   // state
@@ -99,13 +100,13 @@ const AudioPlayer = () => {
       id: uuidv4(),
       artist: "Artist 1",
       title: "Song 1",
-      src: ".//Song.mp3",
+      src: Song1,
     },
     {
       id: uuidv4(),
       artist: "Artist 2",
       title: "Song 2",
-      src: "../Song2.mp3",
+      src: Song2,
     },
   ];
 
@@ -118,7 +119,7 @@ const AudioPlayer = () => {
         </div>
 
         <div className={styles.audioPlayer}>
-          <audio ref={audioPlayer} src={Music} preload="metadata" onLoadedMetadata={onLoadedMetadata} />
+          <audio ref={audioPlayer} src={songs[currentSongIndex].src} preload="metadata" onLoadedMetadata={onLoadedMetadata} />
           <button className={styles.prevTrack} onClick={handlePreviousTrack}>
             <FaBackward />
           </button>
@@ -131,7 +132,7 @@ const AudioPlayer = () => {
           <button onClick={forwardThirty} className={styles.forwardBackward}>
             <BsArrowRightShort /> 30
           </button>
-          <button className={styles.nextTrack} onClick={handlePreviousTrack}>
+          <button className={styles.nextTrack} onClick={handleNextTrack}>
             <FaForward />
           </button>
           {/* Current time */}
