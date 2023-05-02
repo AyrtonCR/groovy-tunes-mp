@@ -1,0 +1,15 @@
+.footerContainer {
+  display: grid;
+}
+
+.footer {
+  color: WHITE;
+  border-top: 0.01rem solid white;
+  margin-top: 0rem;
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+.footerText {
+  margin-left: 1rem;
+  padding: 1rem;
+}

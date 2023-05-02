@@ -1,0 +1,16 @@
+.descriptionContainer {
+  display: grid;
+}
+.description {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  justify-self: center;
+  padding: 2rem 5rem;
+  max-width: 70%;
+}
+.descriptionText {
+  color: WHITE;
+  font-size: 0.9rem;
+  margin: 0.5rem;
+}
