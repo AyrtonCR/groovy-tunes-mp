@@ -9,7 +9,7 @@ import Song2 from "./Song2.mp3";
 
 const AudioPlayer = () => {
   // state
-  const [isPlaying, setIsPlaying] = useState(false);
+  let [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
@@ -35,7 +35,7 @@ const AudioPlayer = () => {
   const togglePlayPause = () => {
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
-    console.log(audioPlayer);
+
     if (!prevValue) {
       audioPlayer.current.play();
       animationRef.current = requestAnimationFrame(whilePlaying);
@@ -76,6 +76,7 @@ const AudioPlayer = () => {
     setCurrentSongIndex(newIndex);
     if (isPlaying) {
       audioPlayer.current.play();
+      togglePlayPause();
     }
   }
 
@@ -84,6 +85,7 @@ const AudioPlayer = () => {
     setCurrentSongIndex(newIndex);
     if (isPlaying) {
       audioPlayer.current.play();
+      togglePlayPause();
     }
   }
 
